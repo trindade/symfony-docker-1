@@ -54,6 +54,10 @@ RUN set -eux; \
     ;
 
 ###> recipes ###
+###> doctrine/doctrine-bundle ###
+RUN docker-php-ext-install mysqli pdo pdo_mysql; 
+
+###< doctrine/doctrine-bundle ###
 ###< recipes ###
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
